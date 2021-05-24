@@ -69,7 +69,8 @@ class App extends Component {
 							changed={(event) => this.nameChengeHandler(event, person.id)}/>
 					})}
 				</div>
-			)
+			);
+
 			style.backgroundColor = 'red'
 		}
 
