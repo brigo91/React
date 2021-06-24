@@ -24,6 +24,10 @@ class Persons extends Component {
 
     //render
 
+    /* componentWillUpdate(){
+
+    }
+ */
     componentDidUpdate(prevProps, prevState, snapshot){
         console.log('[Persons.js] componentDidUpdate');
         console.log(snapshot);
