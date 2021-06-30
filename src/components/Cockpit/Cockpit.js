@@ -3,10 +3,21 @@ import React, { useEffect } from 'react';
 import classes from './Cockpit.css';
 
 const cockpit = (props) => {
+    /* useEffect(()=>{
+        console.log('[App.js] useEffect');
+        //Http request...
+        setTimeout(()=>{
+            alert("Saved data to the cloud");
+        }, 1000);
+    }, [props.persons]); */
+
     useEffect(()=>{
         console.log('[App.js] useEffect');
         //Http request...
-    });
+        setTimeout(()=>{
+            alert("Saved data to the cloud");
+        }, 1000);
+    }, []);
 
     const assingendClasses = [];
     let btnClass = '';
