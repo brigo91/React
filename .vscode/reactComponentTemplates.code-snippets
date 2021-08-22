@@ -10,8 +10,16 @@
 		"scope": "javascript,typescript",
 		"prefix": "fcmp",
 		"body": [
-			"import React from 'react';\n\nconst cmp = (props) => {\n\t\n};\n\nexport default cmp;\n",
+			"import React from 'react';\n\nconst cmp = (props) => {\n\treturn <div>Cmp</div>;$0\n};\n\nexport default cmp;\n",
 		],
 		"description": "Create React functional component template"
+	},
+	"Create React class-based component template": {
+		"scope": "javascript,typescript",
+		"prefix": "ccmp",
+		"body": [
+			"import React, { Component } from 'react';\n\nclass Cmp extends Component{\n\trender(){\n\t\treturn <div>Cmp</div>;$0\n\t}\n}\n\nexport default Cmp;\n",
+		],
+		"description": "Create React class-based component template"
 	}
 }
