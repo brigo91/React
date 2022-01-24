@@ -1,0 +1,23 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brigo91/React.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brigo91/React/issues"
+  },
+  "homepage": "https://github.com/brigo91/React#readme",
+  "devDependencies": {
+    "webpack": "^5.67.0",
+    "webpack-dev-server": "^4.7.3"
+  }
+}
