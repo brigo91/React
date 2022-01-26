@@ -8,5 +8,14 @@ module.exports = {
 		filename: 'boundle.js',
 		publicPath: ''
 	},
-	devtool: 'cheap-module-eval-source-map'
+	devtool: 'cheap-module-eval-source-map',
+	module: {
+		rules: [
+			{
+				test: /\.js/,
+				loader: 'bavel-loader',
+				exclude: /node_modules/
+			}
+		]
+	}
 };

@@ -1,0 +1,16 @@
+{
+	"presets": [
+		[
+			"@babel/preset-env",
+			{
+				"targets": {
+					"browser": [">1 1%", "lasr 2 version"]
+				}
+			}
+		],
+		"@babel/preset-react"
+	],
+	"plugins": [
+		"@babel/plugins-proposal-class-properties"
+	]
+}
