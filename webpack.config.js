@@ -1,4 +1,5 @@
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
 	mode: 'development',
@@ -12,9 +13,32 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.js/,
-				loader: 'bavel-loader',
+				test: /\.js$/,
+				loader: 'babel-loader',
 				exclude: /node_modules/
+			},
+			{
+				test: /\.css$/,
+				exclude: /node_modules/,
+				use: [
+					{	loader: 'style-loader'	},
+					{
+						loader: 'css-loader',
+						options: {
+							importLoaders: 1,
+							modules: {
+								localIdentName: '[name]__[local]__[hash:base:64:5]'
+							}
+						}
+					},
+					{
+						loader: 'post-loader',
+						options: {
+							ident: postcss,
+							plugins: () => [autoprefixer()]
+						}
+					}
+				]
 			}
 		]
 	}
