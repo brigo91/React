@@ -1,5 +1,6 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	mode: 'development',
@@ -9,7 +10,7 @@ module.exports = {
 		filename: 'boundle.js',
 		publicPath: ''
 	},
-	devtool: 'cheap-module-eval-source-map',
+	devtool: 'eval-cheap-module-source-map',
 	module: {
 		rules: [
 			{
@@ -32,14 +33,37 @@ module.exports = {
 						}
 					},
 					{
-						loader: 'post-loader',
+						loader: 'postcss-loader',
 						options: {
-							ident: postcss,
-							plugins: () => [autoprefixer()]
+							//ident: 'postcss',
+							//plugins: () => [autoprefixer()],
+							postcssOptions: {
+								plugins: () => [autoprefixer()],
+							}
 						}
 					}
 				]
+			},
+			{
+				test: /\.(png|jpe?g|gif)$/,
+				use: [
+					{
+						loader: 'url-loader',
+						options: {
+							limit: 8000,
+							name : 'assets/img/[name].[ext]'
+						}
+					}
+				]
+				//loader: 'url-loader?limit=8000&name=images/[name].[ext]' 
 			}
 		]
-	}
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: __dirname + '/src/index.html',
+			filename: 'index.html',
+			inject: 'body'
+		})
+	]
 };
