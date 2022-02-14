@@ -23,6 +23,10 @@ const Ingredients = () => {
       })
   }, []);
 
+  useEffect(() => {
+    console.log('RENDERING INGREDIENTS', userIngredients);
+  }, [userIngredients]);
+
   const addIngredientHandler = ingredient => {
     fetch('https://react-hooks-update-1838d-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json',{
       method: 'POST',
